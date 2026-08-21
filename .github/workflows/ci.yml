@@ -44,7 +44,7 @@ jobs:
     - name: Get CMake and Ninja
       uses: lukka/get-cmake@latest
       with:
-        cmakeVersion: ${{ runner.os == 'Windows' && '4.2' || '3.22' }}
+        cmakeVersion: ${{ runner.os == 'Windows' && '4.2' || '3.5' }}
         ninjaVersion: latest
 
     - name: Install Linux Dependencies
@@ -65,7 +65,7 @@ jobs:
       with:
         repository: SFML/SFML
         path: sfml
-        ref: 3.0.0
+        ref: ${{ runner.os == 'Windows' && '3.1.0' || '3.0.0' }}
 
     - name: Configure SFML
       run: |
