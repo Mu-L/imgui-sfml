@@ -105,7 +105,7 @@ jobs:
       run: cmake --build imgui-sfml/build --target tidy
 
     - name: Test ImGui-SFML
-      run: ctest --test-dir imgui-sfml/build --config ${{matrix.type.name}} --output-on-failure
+      run: ctest --test-dir imgui-sfml/build --build-config ${{matrix.type.name}} --output-on-failure
 
   clang-format:
     runs-on: ubuntu-22.04
